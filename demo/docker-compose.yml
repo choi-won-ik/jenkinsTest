@@ -1,0 +1,10 @@
+services:
+  java:
+    ports:
+      - "8080:8080"
+    image: openjdk:17-ea-slim-buster
+    volumes:
+      - ./back/cwi_test_backend-0.0.1-SNAPSHOT.jar:/app.jar
+    command: ["java", "-jar", "/app.jar"]
+    depends_on:
+      - db
