@@ -14,18 +14,10 @@ import java.util.Date;
 
 @Component
 public class JwtUtil {
-    @Value("${jwt.secret}")
-    private String secret;
-    private static String SECRET;
-    @Value("${jwt.expired}")
-    private int exp;
-    private static int EXP;
 
-    @PostConstruct
-    public void init() {
-        SECRET = secret;
-        EXP = exp;
-    }
+    private static String SECRET="abcdefghijklmnopqrstuvwxyz0123456789abcdefghijklmnopqrstuvwxyz0123456789";
+    private static int EXP=99999;
+
 
     public static Member getMember(String token) {
         try {

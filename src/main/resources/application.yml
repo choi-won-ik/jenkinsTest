@@ -1,7 +1,6 @@
 spring:
   datasource:
-
-    url: jdbc:mariadb://192.0.5.19:3306/cwi;
+    url: jdbc:mariadb://10.10.10.21:3306/cwi
     driver-class-name: org.mariadb.jdbc.Driver
     username: cwi
     password: qwer1234
