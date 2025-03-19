@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        IMAGE_NAME = 'ddarahakit2025/backend'
+        IMAGE_NAME = 'whwwhs7837/backend'
         IMAGE_TAG = "${BUILD_NUMBER}"
     }
 
@@ -10,7 +10,7 @@ pipeline {
         stage('Git Clone') {
             steps{
                 echo "Cloneing Repository"
-                git branch: 'main', url: 'https://github.com/ddarahakit2025/jenkins_test'
+                git branch: 'main', url: 'https://github.com/choi-won-ik/jenkinsTest'
             }
         }
         stage('Gradle Build') {
