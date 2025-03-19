@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: k8s
+spec:
+  replicas: 2
+  strategy:
+    type: Recreate
+  revisionHistoryLimit: 1
+  selector:
+    matchLabels:
+      type: app
+  template:
+    metadata:
+      labels:
+        type: app
+    spec:
+      nodeSelector:
+        kubernetes.io/hostname: worker02
+      containers:
+        - name: container
+          image: whwwhs7837/backned:latest
+          ports:
+            - containerPort: 8080
+      terminationGracePeriodSeconds: 5
