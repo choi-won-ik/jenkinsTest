@@ -19,3 +19,10 @@ jobs:
           root: .
           paths:
             - build/libs/*.jar
+
+
+workflows:                  # 실행
+  version: 2
+  build-and-deploy:
+    jobs:
+      - gradle-build        # 위에 만든 작업
